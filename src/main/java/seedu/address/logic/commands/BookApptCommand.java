@@ -14,7 +14,7 @@ import seedu.address.model.patient.Patient;
 
 /**
  * Adds an appointment to the patient with the given NRIC.
- * Format: appt dt/YYYY-MM-DDTHH:MM h/HEALTHSERVICE i/NRIC
+ * Format: appt NRIC dt/YYYY-MM-DDTHH:MM h/HEALTHSERVICE
  */
 public class BookApptCommand extends Command {
 
