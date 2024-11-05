@@ -25,3 +25,37 @@ docs/_site/
 # VSCode files
 .vscode/
 
+bin/test/seedu/address/logic/LogicManagerTest.class
+bin/test/seedu/address/logic/commands/AddCommandIntegrationTest.class
+bin/test/seedu/address/logic/commands/AddCommandTest$ModelStub.class
+bin/test/seedu/address/logic/commands/AddCommandTest$ModelStubAcceptingPatientAdded.class
+bin/test/seedu/address/logic/commands/AddCommandTest$ModelStubWithPatient.class
+bin/test/seedu/address/logic/commands/AddCommandTest.class
+bin/test/seedu/address/logic/commands/AddFCommandIntegrationTest.class
+bin/test/seedu/address/logic/commands/AddFCommandTest$ModelStub.class
+bin/test/seedu/address/logic/commands/AddFCommandTest$ModelStubWithOnlyOnePatient.class
+bin/test/seedu/address/logic/commands/AddFCommandTest.class
+bin/test/seedu/address/logic/commands/ClearCommandTest.class
+bin/test/seedu/address/logic/commands/CommandTestUtil.class
+bin/test/seedu/address/logic/commands/DeleteCommandTest.class
+bin/test/seedu/address/logic/commands/EditCommandTest.class
+bin/test/seedu/address/logic/commands/EditPatientDescriptorTest.class
+bin/test/seedu/address/logic/commands/ExitCommandTest.class
+bin/test/seedu/address/logic/commands/FilterCommandTest.class
+bin/test/seedu/address/logic/commands/FindCommandTest.class
+bin/test/seedu/address/logic/commands/HelpCommandTest.class
+bin/test/seedu/address/logic/commands/HomeCommandTest.class
+bin/test/seedu/address/logic/commands/ViewCommandTest.class
+bin/test/seedu/address/logic/parser/AddCommandParserTest.class
+bin/test/seedu/address/logic/parser/AddFCommandParserTest.class
+bin/test/seedu/address/logic/parser/EditCommandParserTest.class
+bin/test/seedu/address/model/ClinicConnectSystemTest$ClinicConnectSystemStub.class
+bin/test/seedu/address/model/ClinicConnectSystemTest.class
+bin/test/seedu/address/model/ModelManagerTest.class
+bin/test/seedu/address/model/patient/PatientTest.class
+bin/test/seedu/address/model/patient/UniquePatientListTest.class
+bin/test/seedu/address/storage/JsonAdaptedPatientTest.class
+bin/test/seedu/address/storage/JsonClinicConnectSystemStorageTest.class
+bin/test/seedu/address/storage/JsonSerializableClinicConnectSystemTest.class
+bin/test/seedu/address/storage/StorageManagerTest.class
+bin/test/seedu/address/testutil/TypicalPatients.class
