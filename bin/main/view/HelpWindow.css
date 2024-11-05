@@ -1,0 +1,30 @@
+#helpMessage {
+    -fx-text-fill: #87CEEB;
+    -fx-font-size: 14px;
+}
+
+#commandKeywordsHeader {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#functionsHeader {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#commandKeywords {
+    -fx-text-fill: white;
+}
+
+#functions {
+    -fx-text-fill: white;
+}
+
+#helpMessageContainer {
+    -fx-background-color: derive(#1d1d1d, 20%);
+}
+
+#helpContainer {
+    -fx-background-color: derive(#1d1d1d, 20%);
+}
