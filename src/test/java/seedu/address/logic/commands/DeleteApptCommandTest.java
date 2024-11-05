@@ -1,9 +1,9 @@
 package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.TypicalPatients.getTypicalClinicConnectSystem;
 
 import java.time.LocalDateTime;
@@ -15,9 +15,9 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.patient.Nric;
-import seedu.address.model.patient.Appt;
 import seedu.address.model.healthservice.HealthService;
+import seedu.address.model.patient.Appt;
+import seedu.address.model.patient.Nric;
 
 public class DeleteApptCommandTest {
 
@@ -27,7 +27,7 @@ public class DeleteApptCommandTest {
     public void execute_validNricAndDateTime_deleteSuccessful() throws CommandException {
         // setup
         Nric nric = new Nric("S1234567A");
-        Appt appt = new Appt(LocalDateTime.of(2024, 11, 15, 14, 0), 
+        Appt appt = new Appt(LocalDateTime.of(2024, 11, 15, 14, 0),
             new HealthService("Consult"));
         DeleteApptCommand deleteApptCommand = new DeleteApptCommand(nric, appt.getDateTime());
 
@@ -35,16 +35,16 @@ public class DeleteApptCommandTest {
         CommandResult commandResult = deleteApptCommand.execute(model);
 
         // verify
-        assertEquals(String.format(DeleteApptCommand.MESSAGE_DELETE_APPT_SUCCESS, appt), 
+        assertEquals(String.format(DeleteApptCommand.MESSAGE_DELETE_APPT_SUCCESS, appt),
             commandResult.getFeedbackToUser());
         assertFalse(appt.equals(null));
     }
 
     @Test
     public void execute_invalidNric_throwsCommandException() {
-        DeleteApptCommand deleteApptCommand = new DeleteApptCommand(new Nric("S9999999B"), 
+        DeleteApptCommand deleteApptCommand = new DeleteApptCommand(new Nric("S9999999B"),
             LocalDateTime.now());
-        assertThrows(CommandException.class, () -> deleteApptCommand.execute(model), 
+        assertThrows(CommandException.class, () -> deleteApptCommand.execute(model),
             Messages.MESSAGE_INVALID_PATIENT_NRIC);
     }
 
@@ -53,7 +53,7 @@ public class DeleteApptCommandTest {
         Nric validNric = new Nric("S1234567A");
         LocalDateTime invalidDateTime = LocalDateTime.MAX;
         DeleteApptCommand deleteApptCommand = new DeleteApptCommand(validNric, invalidDateTime);
-        assertThrows(CommandException.class, () -> deleteApptCommand.execute(model), 
+        assertThrows(CommandException.class, () -> deleteApptCommand.execute(model),
             Messages.MESSAGE_INVALID_APPT_DATETIME);
     }
 
@@ -71,7 +71,7 @@ public class DeleteApptCommandTest {
         assertTrue(deleteApptCommand1.equals(deleteApptCommand2)); // same values
         assertFalse(deleteApptCommand1.equals(deleteApptCommand3)); // different NRIC
         assertFalse(deleteApptCommand1.equals(null)); // null
-        assertFalse(deleteApptCommand1.equals(new BookApptCommand(nric2, new Appt(dateTime, 
+        assertFalse(deleteApptCommand1.equals(new BookApptCommand(nric2, new Appt(dateTime,
             new HealthService("Consult"))))); // different command type
     }
 }

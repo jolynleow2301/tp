@@ -14,9 +14,9 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.patient.Nric;
-import seedu.address.model.patient.Appt;
 import seedu.address.model.healthservice.HealthService;
+import seedu.address.model.patient.Appt;
+import seedu.address.model.patient.Nric;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for BookApptCommand.
@@ -28,7 +28,7 @@ public class BookApptCommandTest {
     @Test
     public void execute_patientAcceptedByModel_addSuccessful() throws Exception {
         Nric validNric = new Nric("S1234567A");
-        Appt validAppt = new Appt(LocalDateTime.of(2024, 11, 15, 14, 0), 
+        Appt validAppt = new Appt(LocalDateTime.of(2024, 11, 15, 14, 0),
             new HealthService("Consult"));
         BookApptCommand command = new BookApptCommand(validNric, validAppt);
         CommandResult commandResult = command.execute(model);
@@ -38,21 +38,21 @@ public class BookApptCommandTest {
     @Test
     public void execute_duplicateAppt_throwsCommandException() {
         Nric validNric = new Nric("S1234567A");
-        Appt duplicateAppt = new Appt(LocalDateTime.of(2024, 11, 15, 14, 0), 
+        Appt duplicateAppt = new Appt(LocalDateTime.of(2024, 11, 15, 14, 0),
             new HealthService("Consult"));
 
         BookApptCommand command = new BookApptCommand(validNric, duplicateAppt);
-        assertThrows(CommandException.class, () -> command.execute(model), 
+        assertThrows(CommandException.class, () -> command.execute(model),
             BookApptCommand.MESSAGE_DUPLICATE_APPT);
     }
 
     @Test
     public void execute_patientNotFound_throwsCommandException() {
         Nric nonExistentNric = new Nric("S9999999B");
-        Appt validAppt = new Appt(LocalDateTime.of(2024, 11, 16, 16, 0), 
+        Appt validAppt = new Appt(LocalDateTime.of(2024, 11, 16, 16, 0),
             new HealthService("Blood Test"));
         BookApptCommand command = new BookApptCommand(nonExistentNric, validAppt);
-        assertThrows(CommandException.class, () -> command.execute(model), 
+        assertThrows(CommandException.class, () -> command.execute(model),
             BookApptCommand.MESSAGE_PATIENT_NOT_FOUND);
     }
 
