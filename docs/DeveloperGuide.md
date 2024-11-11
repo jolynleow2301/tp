@@ -775,7 +775,7 @@ A patient will be added to the system if the patient is not already in the syste
       Step 1f1 is repeated until future date and time are inputted.<br>
       Use case resumes from step 2.
 
-#### Use case: US04 - Delete an appointment for a patient
+#### Use case: UC04 - Delete an appointment for a patient
 **Preconditions:** The patient with the corresponding NRIC is already registered in the system.<br>
 **Guarantees:** Valid appointments will be deleted if they are already in the patient's list of appointments.
 
@@ -859,6 +859,24 @@ A patient will be deleted from the system if the patient is already in the syste
     * 1d1. ClinicConnect shows an error message saying the patient is not found in the system.<br>
       Step 1d1 is repeated until a valid NRIC that is in the system is inputted.<br>
       Use case resumes from step 2.
+
+#### Use case: UC07 - Clear data in ClinicConnect
+
+**MSS:**
+
+1.  User types the command to clear all patient records in ClinicConnect.
+2.  ClinicConnect deletes all the patient records from the system successfully.
+
+    Use case ends.
+
+#### Use case: UC08 - Exit ClinicConnect
+
+**MSS:**
+
+1.  User types the command to exit ClinicConnect.
+2.  ClinicConnect GUI closes successfully.
+
+    Use case ends.
 
 
 ### Non-Functional Requirements
